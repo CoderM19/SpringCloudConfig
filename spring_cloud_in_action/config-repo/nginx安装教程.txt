@@ -1,0 +1,27 @@
+（1）安装pcre依赖
+   1.把安装压缩文件放到linux系统中
+  2.解压压缩文件 tar -xvf 文件名
+ 3.进入解压之后目录，执行./configure
+4.使用make && make install
+5.安装之后，使用命令。查看版本号 pcre-config --version
+
+（2）安装其他的依赖
+    yum -y install make zlib zlib-devel gcc-c++ libtool openssl openssl-devel
+
+ 一键安装上面四个依赖
+   yum -y install gcc zlib zlib-devel pcre-devel openssl openssl-devel
+
+ 2.安装nginx
+   1.把nginx安装文件放到linux系统中
+  2.解压压缩文件
+  3.进入解压之后目录，执行./configure
+  4.使用make && make install
+   
+  安装成功之后，在usr 多出来一个文件夹/local/nginx，在nginx有sbin里有启动脚本
+  
+查看开放的端口号
+  firewall-cmd --list-all
+
+设置开放的端口号
+ firewall-cmd --add-service=http -permanent
+sudo firewall-cmd --add-port=80/tcp --permanent   firewall-cmd --reload
